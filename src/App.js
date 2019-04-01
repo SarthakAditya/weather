@@ -42,11 +42,10 @@ class App extends Component {
         }
     );
     const city=e.target.elements.city.value;
-    const country=e.target.elements.country.value;
     var days7 = new Array(0);
     var dd=new Date();
     dd.setDate(dd.getDate()-7);
-    if (city && country)
+    if (city)
     {
       const api_call= await fetch(`http://api.apixu.com/v1/forecast.json?key=${API_KEY}&q=${city}&days=4`);
       const data=await api_call.json();
@@ -82,13 +81,13 @@ class App extends Component {
             label: 'Temperature',
             data: [this.state.temp[2], this.state.temp[3], this.state.temp[4], this.state.temp[5], this.state.temp[6], this.state.temp[7], this.state.temp[8]],
             backgroundColor: [
-              'rgba(255, 0, 0, 0.3)',
-              'rgba(255, 255, 0, 0.3)',
-              'rgba(255, 0, 255, 0.3)',
-              'rgba(0, 255, 0, 0.3)',
-              'rgba(0, 0, 255, 0.3)',
-              'rgba(255, 0, 0, 0.6)',
-              'rgba(0, 0, 255, 0.9)'
+              'rgb(255, 0, 0)',
+              'rgb(255, 255, 0)',
+              'rgb(255, 0, 255)',
+              'rgb(0, 255, 0)',
+              'rgb(0, 0, 255)',
+              'rgb(255, 0, 0)',
+              'rgb(0, 0, 255)'
             ]
 
           }
@@ -102,13 +101,13 @@ class App extends Component {
             label: 'Humidity',
             data: [this.state.humidity[2], this.state.humidity[3], this.state.humidity[4], this.state.humidity[5], this.state.humidity[6], this.state.humidity[7], this.state.humidity[8]],
             backgroundColor: [
-              'rgba(255, 0, 0, 0.3)',
-              'rgba(255, 255, 0, 0.3)',
-              'rgba(255, 0, 255, 0.3)',
-              'rgba(0, 255, 0, 0.3)',
-              'rgba(0, 0, 255, 0.3)',
-              'rgba(255, 0, 0, 0.6)',
-              'rgba(0, 0, 255, 0.9)'
+              'rgb(255, 0, 0)',
+              'rgb(255, 255, 0)',
+              'rgb(255, 0, 255)',
+              'rgb(0, 255, 0)',
+              'rgb(0, 0, 255)',
+              'rgb(255, 0, 0)',
+              'rgb(0, 0, 255)'
             ]
 
           }
@@ -122,13 +121,13 @@ class App extends Component {
             label: 'Precipitation',
             data: [this.state.prec[2], this.state.prec[3], this.state.prec[4], this.state.prec[5], this.state.prec[6], this.state.prec[7], this.state.prec[8]],
             backgroundColor: [
-              'rgba(255, 0, 0, 0.3)',
-              'rgba(255, 255, 0, 0.3)',
-              'rgba(255, 0, 255, 0.3)',
-              'rgba(0, 255, 0, 0.3)',
-              'rgba(0, 0, 255, 0.3)',
-              'rgba(255, 0, 0, 0.6)',
-              'rgba(0, 0, 255, 0.9)'
+              'rgb(255, 191, 0)',
+              'rgb(128, 255, 0)',
+              'rgb(0, 255, 191)',
+              'rgb(0, 128, 255)',
+              'rgb(191, 0, 255)',
+              'rgb(255, 0, 128)',
+              'rgb(255, 0, 0)'
             ]
 
           }

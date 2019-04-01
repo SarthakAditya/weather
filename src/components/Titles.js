@@ -1,9 +1,11 @@
 import React from "react"
-
+const devstyle ={
+    textAlign:'center'
+}
 const Titles = () =>(
-    <div>
-        <h1>Finally Working on Weather</h1>
-        <p>Let's get going</p>
+    <div style={devstyle}>
+        <h1>Weather Forcast</h1>
+        <br/><br/>
     </div>
 );
 

@@ -8,7 +8,6 @@ const divStyle = {
 const Table = props => (
 
     <div>
-
         {props.forcasrData &&
         <table style={divStyle}>
             <tr>
@@ -18,10 +17,10 @@ const Table = props => (
                 <th>Precipitation</th>
             </tr>
             <tr>
-                <td>{props.forcasrData.dates[0]}</td>
-                <td>{props.forcasrData.temps[0]}</td>
-                <td>{props.forcasrData.hums[0]}</td>
-                <td>{props.forcasrData.percs[0]}</td>
+                <td><b>{props.forcasrData.dates[0]}</b></td>
+                <td><b>{props.forcasrData.temps[0]}</b></td>
+                <td><b>{props.forcasrData.hums[0]}</b></td>
+                <td><b>{props.forcasrData.percs[0]}</b></td>
             </tr>
             <tr>
                 <td>{props.forcasrData.dates[1]}</td>
