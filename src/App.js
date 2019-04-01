@@ -47,7 +47,7 @@ class App extends Component {
     dd.setDate(dd.getDate()-7);
     if (city)
     {
-      const api_call= await fetch(`http://api.apixu.com/v1/forecast.json?key=${API_KEY}&q=${city}&days=4`);
+      const api_call= await fetch(`https://api.apixu.com/v1/forecast.json?key=${API_KEY}&q=${city}&days=4`);
       const data=await api_call.json();
       console.log(data);
       this.setState({
@@ -63,7 +63,7 @@ class App extends Component {
       var j=0;
       for (i=7;i>0;i--) {
         var dt = formatDate(dd);
-        var api_call2 = await fetch(`http://api.apixu.com/v1/history.json?key=${API_KEY}&q=${city}&dt=${dt}`);
+        var api_call2 = await fetch(`https://api.apixu.com/v1/history.json?key=${API_KEY}&q=${city}&dt=${dt}`);
         days7.push(await api_call2.json());
         dd.setDate(dd.getDate()+1);
         this.setState({
