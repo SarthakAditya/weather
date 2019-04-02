@@ -66,12 +66,23 @@ class App extends Component {
         var api_call2 = await fetch(`https://api.apixu.com/v1/history.json?key=${API_KEY}&q=${city}&dt=${dt}`);
         days7.push(await api_call2.json());
         dd.setDate(dd.getDate()+1);
-        this.setState({
-          temp:[...this.state.temp, days7[j].forecast.forecastday[0].day.avgtemp_c],
-          prec:[...this.state.prec, days7[j].forecast.forecastday[0].day.totalprecip_mm],
-          humidity:[...this.state.humidity, days7[j].forecast.forecastday[0].day.avghumidity],
-          date:[...this.state.date, days7[j].forecast.forecastday[0].date],
-        });
+        if(days7[j].forecast.forecastday[0])
+        {
+          this.setState({
+            temp:[...this.state.temp, days7[j].forecast.forecastday[0].day.avgtemp_c],
+            prec:[...this.state.prec, days7[j].forecast.forecastday[0].day.totalprecip_mm],
+            humidity:[...this.state.humidity, days7[j].forecast.forecastday[0].day.avghumidity],
+            date:[...this.state.date, days7[j].forecast.forecastday[0].date],
+          });
+        }
+        else {
+          this.setState({
+            temp: [...this.state.temp, 0],
+            prec: [...this.state.prec,0],
+            humidity: [...this.state.humidity, 0],
+            date: [...this.state.date, 0],
+          });
+        }
         j++;
       }
       var Tchardatatemp={
