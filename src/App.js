@@ -49,7 +49,6 @@ class App extends Component {
     {
       const api_call= await fetch(`https://api.apixu.com/v1/forecast.json?key=${API_KEY}&q=${city}&days=4`);
       const data=await api_call.json();
-      console.log(data);
       this.setState({
         temp: [...this.state.temp, data.current.temp_c],
         city: data.location.name,
@@ -86,11 +85,11 @@ class App extends Component {
         j++;
       }
       var Tchardatatemp={
-        labels: [this.state.date[2], this.state.date[3], this.state.date[4], this.state.date[5], this.state.date[6], this.state.date[7], this.state.date[8]],
+        labels: [this.state.date[1],this.state.date[2], this.state.date[3], this.state.date[4], this.state.date[5], this.state.date[6], this.state.date[7]],
         datasets: [
           {
             label: 'Temperature',
-            data: [this.state.temp[2], this.state.temp[3], this.state.temp[4], this.state.temp[5], this.state.temp[6], this.state.temp[7], this.state.temp[8]],
+            data: [this.state.temp[1],this.state.temp[2], this.state.temp[3], this.state.temp[4], this.state.temp[5], this.state.temp[6], this.state.temp[7]],
             backgroundColor: [
               'rgb(255, 0, 0)',
               'rgb(255, 255, 0)',
@@ -106,11 +105,11 @@ class App extends Component {
       };
 
       var Tchardatahum={
-        labels: [this.state.date[2], this.state.date[3], this.state.date[4], this.state.date[5], this.state.date[6], this.state.date[7], this.state.date[8]],
+        labels: [this.state.date[1],this.state.date[2], this.state.date[3], this.state.date[4], this.state.date[5], this.state.date[6], this.state.date[7]],
         datasets: [
           {
             label: 'Humidity',
-            data: [this.state.humidity[2], this.state.humidity[3], this.state.humidity[4], this.state.humidity[5], this.state.humidity[6], this.state.humidity[7], this.state.humidity[8]],
+            data: [this.state.humidity[1],this.state.humidity[2], this.state.humidity[3], this.state.humidity[4], this.state.humidity[5], this.state.humidity[6], this.state.humidity[7]],
             backgroundColor: [
               'rgb(255, 0, 0)',
               'rgb(255, 255, 0)',
@@ -126,11 +125,11 @@ class App extends Component {
       };
 
       var Tchardataperc={
-        labels: [this.state.date[2], this.state.date[3], this.state.date[4], this.state.date[5], this.state.date[6], this.state.date[7], this.state.date[8]],
+        labels: [this.state.date[1],this.state.date[2], this.state.date[3], this.state.date[4], this.state.date[5], this.state.date[6], this.state.date[7]],
         datasets: [
           {
             label: 'Precipitation',
-            data: [this.state.prec[2], this.state.prec[3], this.state.prec[4], this.state.prec[5], this.state.prec[6], this.state.prec[7], this.state.prec[8]],
+            data: [this.state.prec[1], this.state.prec[2], this.state.prec[3], this.state.prec[4], this.state.prec[5], this.state.prec[6], this.state.prec[7]],
             backgroundColor: [
               'rgb(255, 191, 0)',
               'rgb(128, 255, 0)',
@@ -160,6 +159,7 @@ class App extends Component {
             chartDataPerc:Tchardataperc
           }
       )
+      console.log(this.state);
 
     }
     else
